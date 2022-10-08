@@ -1,23 +1,25 @@
-import React from 'react';
-import "./App.css";
-import { useSelector, useDispatch } from 'react-redux';
+import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ProductComponent from "./components/ProductComponent";
+import ProductDetails from "./components/ProductDetails";
+import ProductList from "./components/ProductList";
+import Header from "./components/Header/Header";
 
 const App = () => {
-  const my_state = useSelector((state) => state.changeTheNumber);
-  const dispatch = useDispatch();
-  
-  console.log(my_state)
   return (
-    <>
-      <h1>Redux Practice</h1>
+    <div className="app">
+      <h1 className="font-extrabold">Redux Project</h1>
+      <Header />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/productcomponent" element={<ProductComponent />} />
+          <Route path="/productdetails" element={<ProductDetails/>} />
+          <Route path="/" element={<ProductList/>} />
+        </Routes>
+      </BrowserRouter>
 
-    <div className='app'>
-      <div className="negative-value"><button>-</button></div>
-      <div className="value-target">Values to behere</div>
-      <div className="negative-value"><button>+</button></div>
     </div>
-    </>
-  )
-}
+  );
+};
 
-export default App
+export default App;
