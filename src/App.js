@@ -13,7 +13,7 @@ function App() {
   };
 
   const decrement = () => {
-    const value = 20;
+    const value = 40;
     dispatch(decrementCounter(value));
   };
 
