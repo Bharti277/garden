@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { decrementCounter, incrementCounter } from "./redux/dashboardAction";
+import { addNumberSuffix, capitalizeFirstLetter, decrementCounter, incrementCounter } from "./redux/dashboardAction";
 import { useState } from "react";
 
 function App() {
@@ -24,7 +24,8 @@ function App() {
   };
   return (
     <div className="text-center">
-      <p>{counter}</p>
+      <p>{addNumberSuffix(counter)}</p>
+      <p>{capitalizeFirstLetter("hello world")}</p>
       <button onClick={handleClick}>Increment</button>
       <button onClick={decrement}>decrement</button>
       {arrCopy.map((ele, i) => {
