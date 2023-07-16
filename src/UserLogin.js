@@ -6,28 +6,28 @@ function UserLogin() {
   const [formErrors, setFormErrors] = useState({});
   const formChange = (e) => {
     const { name, value } = e.target;
-    setFormValues({...formVales, [name]: value});
+    setFormValues({ ...formVales, [name]: value });
     console.log(formVales);
-  }
-const formSubmit = (e) => {
-e.preventDefault();
-setFormErrors(validate(formVales));
-}
+  };
+  const formSubmit = (e) => {
+    e.preventDefault();
+    setFormErrors(validate(formVales));
+  };
 
-const validate = (values) => {
-const errors = {};
+  const validate = (values) => {
+    const errors = {};
     const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i;
-    if(!values.username){
-        errors.username = "Username is required";
+    if (!values.username) {
+      errors.username = "Username is required";
     }
-    if(!values.email){
-        errors.username = "Username is required";
+    if (!values.email) {
+      errors.username = "Username is required";
     }
-    if(!values.password){
-        errors.username = "Username is required";
+    if (!values.password) {
+      errors.username = "Username is required";
     }
     return errors;
-}
+  };
 
   return (
     <div>
