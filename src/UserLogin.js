@@ -56,7 +56,7 @@ function UserLogin() {
         <div className="field">
           <label htmlFor="password">Password</label>
           <input
-            type="text"
+            type="password"
             name="password"
             placeholder="Password"
             value={formVales.password}
