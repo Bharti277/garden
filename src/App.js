@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { addNumberSuffix, capitalizeFirstLetter, decrementCounter, incrementCounter } from "./redux/dashboardAction";
 import { useState } from "react";
+import UserLogin from "./UserLogin";
 
 function App() {
   const counter = useSelector((state) => state.counter);
@@ -38,6 +39,7 @@ function App() {
           </ul>
         );
       })}
+      <UserLogin />
     </div>
   );
 }
