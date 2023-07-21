@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addNumberSuffix, capitalizeFirstLetter, decrementCounter, incrementCounter } from "./redux/dashboardAction";
 import { useState } from "react";
 import UserLogin from "./UserLogin";
+import FetchProducts from "./FetchProducts";
 
 function App() {
   const counter = useSelector((state) => state.counter);
@@ -40,6 +41,7 @@ function App() {
         );
       })}
       <UserLogin />
+      <FetchProducts />
     </div>
   );
 }
