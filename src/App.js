@@ -7,6 +7,7 @@ import {
 } from "./redux/dashboardAction";
 import Navbar from "./components/Navbar";
 import { useState } from "react";
+import Blog from "./components/Blog";
 
 function App() {
   const counter = useSelector((state) => state.counter);
@@ -31,6 +32,7 @@ function App() {
   return (
     <div className="text-center">
       <Navbar />
+      <Blog />
       <p>{counter} Counter</p>
       <p>{capitalizeFirstLetter("hello world")}</p>
       <button onClick={handleClick}>Increment</button>
