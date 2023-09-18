@@ -5,8 +5,8 @@ import {
   decrementCounter,
   incrementCounter,
 } from "./redux/dashboardAction";
+import Navbar from "./components/Navbar";
 import { useState } from "react";
-import UserLogin from "./UserLogin";
 
 function App() {
   const counter = useSelector((state) => state.counter);
@@ -30,7 +30,8 @@ function App() {
   };
   return (
     <div className="text-center">
-      <p>{addNumberSuffix(counter)}</p>
+      <Navbar />
+      <p>{counter} Counter</p>
       <p>{capitalizeFirstLetter("hello world")}</p>
       <button onClick={handleClick}>Increment</button>
       <button onClick={decrement}>decrement</button>
@@ -44,7 +45,6 @@ function App() {
           </ul>
         );
       })}
-      <UserLogin />
     </div>
   );
 }

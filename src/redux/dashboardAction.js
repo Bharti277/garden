@@ -17,14 +17,14 @@ export const capitalizeFirstLetter = (str) => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 };
 
-export const addNumberSuffix = (number) => {
-  const suffixes = ["", " thousand", " million", " billion", " trillion"];
-  let index = 0;
+// export const addNumberSuffix = (number) => {
+//   const suffixes = ["", " thousand", " million", " billion", " trillion"];
+//   let index = 0;
 
-  while (number >= 1000) {
-    number /= 1000;
-    index++;
-  }
+//   while (number >= 1000) {
+//     number /= 1000;
+//     index++;
+//   }
 
-  return `${number.toFixed(1)}${suffixes[index]}`;
-};
+//   return `${number.toFixed(1)}${suffixes[index]}`;
+// };
