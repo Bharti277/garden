@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
-import templateReducer from "./template/templateReducer";
+import counterReducer from "./dashboardReducer";
 
 const rootReducer = combineReducers({
-  templateReducer,
+  counterReducer,
 });
 
 export default rootReducer;

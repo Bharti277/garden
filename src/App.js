@@ -4,48 +4,30 @@ import {
   capitalizeFirstLetter,
   decrementCounter,
   incrementCounter,
+  setProducts,
 } from "./redux/dashboardAction";
 import Navbar from "./components/Navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Blog from "./components/Blog";
 
 function App() {
-  const counter = useSelector((state) => state.counter);
-  const arr = ["name", "age", "bio", "hello"];
+  const products = useSelector((state) => state);
+  console.log(products);
   const dispatch = useDispatch();
-  const [arrCopy, setArrayCopy] = useState(arr);
-  const handleClick = () => {
-    const value = 42;
-    dispatch(incrementCounter(value));
+
+  const fetchProducts = async () => {
+    const API_DATA = "https://fakestoreapi.com/products";
+    const data = await fetch(API_DATA);
+    const res = await data.json();
+    dispatch(setProducts(res));
   };
 
-  const decrement = () => {
-    const value = 40;
-    dispatch(decrementCounter(value));
-  };
-
-  const deleteSelected = (itemIndex) => {
-    let filteredArray = arrCopy.filter((el, i) => i !== itemIndex);
-    console.log("delete", filteredArray);
-    setArrayCopy(filteredArray);
-  };
+  useEffect(() => {
+    fetchProducts();
+  }, []);
   return (
     <div className="text-center">
       <Navbar />
-      <p>{counter} Counter</p>
-      <p>{capitalizeFirstLetter("hello world")}</p>
-      <button onClick={handleClick}>Increment</button>
-      <button onClick={decrement}>decrement</button>
-      {arrCopy.map((ele, i) => {
-        return (
-          <ul key={i}>
-            <li>
-              {ele}{" "}
-              <button onClick={() => deleteSelected(i)}>delete item</button>
-            </li>
-          </ul>
-        );
-      })}
       <Blog />
     </div>
   );
