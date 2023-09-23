@@ -32,7 +32,6 @@ function App() {
   return (
     <div className="text-center">
       <Navbar />
-      <Blog />
       <p>{counter} Counter</p>
       <p>{capitalizeFirstLetter("hello world")}</p>
       <button onClick={handleClick}>Increment</button>
@@ -47,6 +46,7 @@ function App() {
           </ul>
         );
       })}
+      <Blog />
     </div>
   );
 }
