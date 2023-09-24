@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import counterReducer from "./dashboardReducer";
 
 const rootReducer = combineReducers({
-  counterReducer,
+  allProducts: counterReducer,
 });
 
 export default rootReducer;

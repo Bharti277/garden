@@ -11,7 +11,7 @@ import { useEffect, useState } from "react";
 import Blog from "./components/Blog";
 
 function App() {
-  const products = useSelector((state) => state);
+  const products = useSelector((state) => state.allProducts.products);
   console.log(products);
   const dispatch = useDispatch();
 
@@ -25,8 +25,12 @@ function App() {
   useEffect(() => {
     fetchProducts();
   }, []);
+
   return (
     <div className="text-center">
+      {products?.map((prod) => {
+        return <div key={prod.id}>{prod.title}</div>;
+      })}
       <Navbar />
       <Blog />
     </div>

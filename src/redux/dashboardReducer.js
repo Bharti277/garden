@@ -1,5 +1,5 @@
 const initialState = {
-  allProducts: [],
+  // allProducts: [],
 };
 
 const counterReducer = (state = initialState, action) => {
