@@ -28,11 +28,17 @@ function App() {
 
   return (
     <div className="text-center">
-      {products?.map((prod) => {
-        return <div key={prod.id}>{prod.title}</div>;
-      })}
       <Navbar />
-      <Blog />
+      {products?.map((prod) => {
+        return (
+          <div key={prod.id} className="flex bg-green-200 p-4 mx-16 ">
+            <div className="flex-1 bg-green-500 rounded-lg">{prod.title}</div>
+            <div className="flex-1 bg-green-500 rounded-lg">{prod.title}</div>
+            <div className="flex-1 bg-green-500 rounded-lg">{prod.title}</div>
+          </div>
+        );
+      })}
+      {/* <Blog /> */}
     </div>
   );
 }
