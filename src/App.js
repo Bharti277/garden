@@ -31,10 +31,15 @@ function App() {
       <Navbar />
       {products?.map((prod) => {
         return (
-          <div key={prod.id} className="flex bg-green-200 p-4 mx-16 ">
-            <div className="flex-1 bg-green-500 rounded-lg">{prod.title}</div>
-            <div className="flex-1 bg-green-500 rounded-lg">{prod.title}</div>
-            <div className="flex-1 bg-green-500 rounded-lg">{prod.title}</div>
+          <div key={prod.id} className="flex bg-green-800 p-4 mx-16 ">
+            <div className="flex-1 bg-green-500 rounded-lg">
+              <div>
+                <h2>{prod.title}</h2>
+                <img src={prod.image} alt="" className="w-40 h-240" />
+                <p>${prod.price}</p>
+                <p>{prod.description}</p>
+              </div>
+            </div>
           </div>
         );
       })}
