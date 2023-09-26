@@ -31,7 +31,7 @@ function App() {
       <Navbar />
       {products?.map((prod) => {
         return (
-          <div key={prod.id} className="flex bg-green-800 p-4 mx-16 ">
+          <div key={prod.id} className="flex p-4 mx-16 bg-green-800 ">
             <div className="flex-1 bg-green-500 rounded-lg">
               <div>
                 <h2>{prod.title}</h2>
@@ -43,7 +43,7 @@ function App() {
           </div>
         );
       })}
-      {/* <Blog /> */}
+      <Blog />
     </div>
   );
 }
