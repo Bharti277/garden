@@ -1,0 +1,13 @@
+/* .app {
+}
+.products__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.product__card {
+  text-align: center;
+  border: 2px solid black;
+}
+.product__image {
+  width: 240px;
+} */
