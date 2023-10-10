@@ -9,6 +9,11 @@ const counterReducer = (state = initialState, action) => {
         ...state,
         products: action.payload,
       };
+    case "SELECTED_PRODUCTS":
+      return {
+        ...state,
+        selectedProducts: action.payload,
+      };
     default:
       return state;
   }
