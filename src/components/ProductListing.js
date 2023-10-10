@@ -32,10 +32,10 @@ const ProductListing = () => {
                 <p>${prod.price}</p>
                 <p>{prod.description}</p>
               </div>
-              <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700">
-                Add to cart
-              </button>
             </Link>
+            <button className="px-4 py-2 font-bold text-white bg-blue-500 rounded-full hover:bg-blue-700">
+              Add to cart
+            </button>
           </div>
         );
       })}
