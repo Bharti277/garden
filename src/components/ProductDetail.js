@@ -9,10 +9,8 @@ function ProductDetail() {
     (state) => state.allProducts.selectedProducts
   );
   const { id, title, price, description } = selected_products;
-  console.log(selected_products);
   const { productId } = useParams();
   const dispatch = useDispatch();
-  console.log(productId, "product id");
   const fetchProductDetail = async () => {
     const response = await axios
       .get(`https://fakestoreapi.com/products/${productId}`)
