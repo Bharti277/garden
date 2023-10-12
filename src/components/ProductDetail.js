@@ -8,7 +8,7 @@ function ProductDetail() {
   const selected_products = useSelector(
     (state) => state.allProducts.selectedProducts
   );
-  const { id, title, price, description } = selected_products;
+  const { id, title, price } = selected_products;
   const { productId } = useParams();
   const dispatch = useDispatch();
   const fetchProductDetail = async () => {
