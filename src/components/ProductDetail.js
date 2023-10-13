@@ -28,6 +28,7 @@ function ProductDetail() {
     <div className="py-14">
       <div>{id}</div>
       <div>{title}</div>
+      <div>{price}</div>
     </div>
   );
 }
